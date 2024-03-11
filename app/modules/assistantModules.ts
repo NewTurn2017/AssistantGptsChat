@@ -43,7 +43,7 @@ export const prepareUploadFile = async (file: File, setStatusMessage: (message: 
     setStatusMessage('Converting image to base64...');
     const base64Image = await convertFileToBase64(file);
 
-    setStatusMessage('이미지를 Base64로 변환...');
+    setStatusMessage('이미지를 해석 중...');
     const descriptionResponse = await uploadImageAndGetDescription(base64Image);
 
     setStatusMessage('이미지 설명 파일 제작 중...');
