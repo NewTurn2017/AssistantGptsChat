@@ -64,13 +64,13 @@ export default function Chat() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-between bg-space-grey-light">
+    <div className="flex flex-col items-center justify-between bg-space-grey-light">
       {chatHasStarted || assistantId || isLoadingFirstMessage  ? (
         <MessageList chatMessages={chatMessages} statusMessage={statusMessage} isSending={isSending} progress={progress} isFirstMessage={isLoadingFirstMessage} fileDetails={chatFileDetails} />
       ) : (
         <h1>Assistant ID가 필요합니다.</h1>
       )}
       <InputForm {...{input: inputmessage, setInput: setInputmessage, inputRef, formRef, disabled: isButtonDisabled || !chatManager, chatStarted: chatMessages.length > 0, isSending, isLoading: isMessageLoading, chatUploadedFiles, setChatUploadedFiles, chatFileDetails, setChatFileDetails, chatManager, setChatStarted, setChatMessages, setStatusMessage, setIsSending, setProgress, setIsLoadingFirstMessage}} />
-    </main>
+    </div>
   );
 }
