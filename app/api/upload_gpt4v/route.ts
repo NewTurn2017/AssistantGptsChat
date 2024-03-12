@@ -13,7 +13,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from "openai";
 
-
+export const maxDuration = 30; 
+export const dynamic = 'force-dynamic';
 // Initialize the OpenAI client with the API key. This key is essential for authenticating 
 // the requests with OpenAI's API services.
 const openai = new OpenAI({
