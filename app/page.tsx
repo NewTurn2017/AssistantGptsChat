@@ -64,7 +64,7 @@ export default function Chat() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-between p-40 bg-space-grey-light">
+    <main className="flex flex-col items-center justify-between bg-space-grey-light">
       {chatHasStarted || assistantId || isLoadingFirstMessage  ? (
         <MessageList chatMessages={chatMessages} statusMessage={statusMessage} isSending={isSending} progress={progress} isFirstMessage={isLoadingFirstMessage} fileDetails={chatFileDetails} />
       ) : (
