@@ -13,6 +13,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from "openai";
 
+
 // Initialize the OpenAI client with the API key. This key is essential for authenticating 
 // the requests with OpenAI's API services.
 const openai = new OpenAI({
@@ -38,7 +39,7 @@ export async function POST(request: NextRequest) {
 
   // Utilize the provided custom prompt or a default prompt if it's not provided.
   // This prompt guides the analysis of the image by OpenAI's model.
-  const promptText = customPrompt || "Analyze and describe the image in detail. Focus on visual elements like colors, object details, people's positions and expressions, and the environment. Transcribe any text as 'Content: “[Text]”', noting font attributes. Aim for a clear, thorough representation of all visual and textual aspects.";
+  const promptText = customPrompt || "Analyze and describe the image in detail. Focus on visual elements like colors, object details, people's positions and expressions, and the environment. Transcribe any text as 'Content: “[Text]”', noting font attributes. Aim for a clear, thorough representation of all visual and textual aspects.The response must be within 100 tokens.";
 
   // Log the chosen prompt
   console.log(`Using prompt: ${promptText}`);
@@ -62,7 +63,7 @@ export async function POST(request: NextRequest) {
           ]
         }
       ],
-      max_tokens: 200
+      max_tokens: 200,
     });
 
     // Log the response received from OpenAI, which includes the analysis of the image.

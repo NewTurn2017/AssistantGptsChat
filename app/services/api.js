@@ -2,6 +2,7 @@
 
 // Uploads a base64 encoded image and gets a description
 export const uploadImageAndGetDescription = async (base64Image) => {
+  
     console.log('Uploading image...');
     const response = await fetch('/api/upload_gpt4v', {
       method: 'POST',
